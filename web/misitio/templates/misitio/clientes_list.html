@@ -1,0 +1,11 @@
+{% extends 'misitio/base.html' %}
+{% block content %}
+    {% for cliente in clientes %}
+        <p>_____________________________________________________________________________________________________</p>
+        <div class="content">
+            <p><div class="dni">Dni: {{ cliente.dni }}</div>
+            Nombre: {{ cliente.nombre }} Fecha alta: {{ cliente.alta }}
+            <p>Direccion: {{ cliente.direccion }} movil: {{ cliente.mobile }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

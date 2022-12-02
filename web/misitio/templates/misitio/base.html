@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+    <title>3DPrint</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/front.css' %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet"/>
+</head>
+<body class="{{dbg}}">
+  <div class="page-header">
+    <div class="icoplush">
+      <img height="60px" src="static/img/3d-printer.png"/>
+    </div>
+    <h2 class="tittle"><a href="/">Página web de proyectos</a></h2>
+    <a href="{% url 'cliente_new' %}" class="top-menu"><span class='glyphicon-plus'>Alta Cliente </span></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" class="top-menu"><span class = 'glyphicon-minus'>Baja Cliente</span></a>
+    <a href="#" class="top-menu"><span class = "noicon">Productos</span></a>
+    <a href="#" class="top-menu"><span class = "noicon">Pedidos</span></a>
+  </div>
+    <div>
+        <div class="content">
+          <div class="row">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+    </div>
+</body>
+</html>
