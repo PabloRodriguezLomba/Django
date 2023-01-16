@@ -1,0 +1,13 @@
+{% extends 'misitio/base.html' %}
+{% block content %}
+<h3>Dar de baja a Clientes</h3><br>
+<div class="clienteform">
+  <form method="POST" > {% csrf_token %}
+    {{ form.as_p }}
+    <div aria-orientation="vertical">
+      <button type="submit" class="save btn btn-default">Borrar</button>
+      <button type="submit" class="search btn">Buscar</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

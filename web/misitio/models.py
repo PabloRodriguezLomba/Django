@@ -14,3 +14,4 @@ class Cliente(models.Model):
 class Printer(models.Model):
     Modelo = models.CharField(max_length=150,blank=False,null=False)
     Precio = models.FloatField(blank=False,null=False)
+    Material = models.CharField(max_length=150,blank=False,null=False)
