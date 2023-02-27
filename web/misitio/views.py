@@ -30,3 +30,6 @@ def cliente_baja(request):
     else:
         form = BajaForm()
     return render(request,'misitio/clientes_baja.html',{'form': form})
+
+def home(request):
+    return render(request,'misitio/home.html')
