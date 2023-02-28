@@ -1,13 +1,15 @@
-{% extends 'misitio/cli.html' %}
-{% block cli %}
+{% extends 'misitio/base.html' %}
+{% block content %}
 
-    {% for clis in cliente %}
-
-            <div class="content">
-                <p><div class="dni">Dni: {{ clis.dni }}</div>
-                    Nombre: {{ clis.nombre }} Fecha alta: {{ clis.alta }}
-                <p>Direccion: {{ clis.direccion }} movil: {{ clis.mobile }}</p>
-            </div>
-
-    {% endfor %}
+    <ul class="list-group">
+        {% for cliente in clientes %}
+            <li class="list-group-item">
+                <div class="content">
+                    <p><div class="fw-bold">Dni: {{ cliente.dni }}</div>
+                        Nombre: {{ cliente.nombre }}  Fecha alta: {{ cliente.alta }}
+                    <p>Direccion: {{ cliente.direccion }} movil: {{ cliente.mobile }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

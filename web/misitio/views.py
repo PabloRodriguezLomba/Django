@@ -7,9 +7,6 @@ from django.utils import timezone
 def clientes_list(request):
     clientes = Cliente.objects.filter(alta__lte=timezone.now()).order_by('alta')
     return render(request, 'misitio/clientes_list.html', {'clientes': clientes})
-def cli(request):
-    cliente = Cliente.objects.filter(alta__lte=timezone.now()).order_by('alta')
-    return render(request,'misitio/clientes_list.html',{'clientes': cliente})
 def cliente_new(request):
     if request.method == 'POST':
         form = ClienteForm(request.POST)
