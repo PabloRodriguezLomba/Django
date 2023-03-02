@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView
 from .forms import ClienteForm, BajaForm
-from .models import Cliente
+from .models import Cliente, Product
 from django.utils import timezone
 # Create your views here.
 def clientes_list(request):
@@ -35,3 +35,7 @@ def home(request):
 
 def About(request):
     return render(request,'misitio/About.html')
+
+def product_detail(request):
+    Producto = Product.Objects.filter(request.GET.get("producto"))
+    return render(request,'misitio/ProductDetail.html')
