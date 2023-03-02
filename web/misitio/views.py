@@ -6,6 +6,7 @@ from django.utils import timezone
 # Create your views here.
 def clientes_list(request):
     clientes = Cliente.objects.filter(alta__lte=timezone.now()).order_by('alta')
+
     return render(request, 'misitio/clientes_list.html', {'clientes': clientes})
 def cliente_new(request):
     if request.method == 'POST':
@@ -37,5 +38,19 @@ def About(request):
     return render(request,'misitio/About.html')
 
 def product_detail(request):
-    Producto = Product.Objects.filter(request.GET.get("producto"))
-    return render(request,'misitio/ProductDetail.html')
+    print(request.GET.get("producto"))
+    producto = Product.objects.filter(nombre=request.GET.get("producto"))
+
+    return render(request,'misitio/ProductDetail.html',{'producto':producto})
+
+def purchase(cuantity,name):
+    producto = Product.objects.filter(nombre=name).update(stock=cuantity+1)
+
+def Sale(cuantity,name):
+    producto = Product.objects.filter(nombre=name).update(stock=cuantity-1)
+
+
+
+
+
+

@@ -1,40 +1,37 @@
 {% extends 'misitio/base.html' %}
 {% block content %}
+{% for Product in producto %}Product
 <div class="container mt-5 mb-5">
     <div class="card">
         <div class="row g-0">
             <div class="col-md-6 border-end">
                 <div class="d-flex flex-column justify-content-center">
-                    <div class="main_image"><img src="{{ producto.url }}" id="main_product_image"
+                    <div class="main_image"><img src="{{ Product.url }}" id="main_product_image"
                                                  width="350"></div>
 
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="p-3 right-side">
-                    <div class="d-flex justify-content-between align-items-center"><h3>{{ producto.nombre }}</h3>    <span
+                    <div class="d-flex justify-content-between align-items-center"><h3>{{ Product.nombre }}</h3>    <span
                             class="heart"><i class='bx bx-heart'></i></span></div>
+                    <div>
+                       Lorem ipsum dolor sit amet. Hic voluptatem ipsam est voluptas fugiat 33 ipsa culpa qui repellat odit. Vel dignissimos quam ex alias impedit vel sint voluptatem id labore molestias qui dignissimos ducimus et corrupti voluptate ut quos quis.
 
-                    <h3>{{ producto.precio }}</h3>
+Et sint dolores et recusandae rerum aut quibusdam velit et dolores facere sed quisquam quisquam ut molestiae nulla et voluptate unde. Ad debitis debitis sed dicta architecto aut sunt repudiandae. Qui quia voluptas est corporis nobis vel deserunt voluptas est galisum itaque et beatae maxime in iusto possimus. Aut consequatur earum et laboriosam impedit est architecto omnis ex quaerat nihil ut excepturi mollitia et enim voluptates.
+                    </div>
+                    <p></p>
+                    <h3>{{ Product.precio }}</h3>
+
+
                     <div class="ratings d-flex flex-row align-items-center">
                         <div class="d-flex flex-row"><i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i
                                 class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i></div>
                         <span>441 reviews</span>
-                        <span>stock : {{ producto.stock }}</span>
+                        <span>stock : {{ Product.stock }}</span>
                     </div>
-                    <div class="mt-5"><span class="fw-bold">Color</span>
-                        <div class="colors">
-                            <ul id="marker">
-                                <li id="marker-1"></li>
-                                <li id="marker-2"></li>
-                                <li id="marker-3"></li>
-                                <li id="marker-4"></li>
-                                <li id="marker-5"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="buttons d-flex flex-row mt-5 gap-3">
-                        <button class="btn btn-outline-dark">Buy Now</button>
+                    <div class="buttons d-flex flex-row mt-5 gap-3 " >
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
 
                     </div>
 
@@ -43,4 +40,22 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Compra Completada</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 {% endblock %}
