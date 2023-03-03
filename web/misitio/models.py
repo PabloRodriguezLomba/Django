@@ -16,3 +16,4 @@ class Product(models.Model):
     url = models.CharField(max_length=150,blank=False,null=False)
     precio = models.CharField(max_length=150,blank=False,null=False)
     stock = models.CharField(max_length=150,blank=False,null = False)
+    Descripcion = models.CharField(max_length=500,blank=False,null=True)
